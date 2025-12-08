@@ -376,6 +376,7 @@
       align-items: center;
       justify-content: flex-start;
       gap: 12px;
+      flex-wrap: wrap;
     }
 
     .social-link {
@@ -438,6 +439,66 @@
       font-size: 11px;
       color: #9ca3af;
       margin-left: 4px;
+    }
+
+    /* VIEW PORTFOLIO BUTTON */
+    .portfolio-btn {
+      margin-top: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #fff;
+      background: linear-gradient(135deg, #38bdf8, #a855f7);
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+    }
+
+    .portfolio-btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #a855f7, #f97316);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .portfolio-btn span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .portfolio-btn i {
+      position: relative;
+      z-index: 1;
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-btn:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 8px 25px rgba(168, 85, 247, 0.6);
+    }
+
+    .portfolio-btn:hover::before {
+      opacity: 1;
+    }
+
+    .portfolio-btn:hover i {
+      transform: translateX(4px);
+    }
+
+    .portfolio-btn:active {
+      transform: translateY(0) scale(0.98);
     }
   </style>
 </head>
@@ -594,6 +655,11 @@
           </a>
           <span class="social-label">Profiles</span>
         </div>
+        <!-- VIEW PORTFOLIO BUTTON -->
+        <a href="akash.html" class="portfolio-btn">
+          <span>View Portfolio</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
       </article>
     </section>
   </div>
